@@ -21,7 +21,7 @@ This structure allows for easy navigation and provides a clear reference for eac
 Each folder in this repository represents a subject, and within each subject folder, you will find the respective lab work. Here’s a brief guide on what you’ll find:
 
 - **Folder Structure**:  
-├── Subject 1/ │ ├── Lab1/ │ ├── Lab2/ │ └── ... ├── Subject 2/ │ ├── Lab1/ │ ├── Lab2/ │ └── ... └── ...
+├── Subject 1/ │ ├── Lab 1/ │ ├── Lab 2/ │ └── ... ├── Subject 2/ │ ├── Lab 1/ │ ├── Lab 2/ │ └── ... └── ...
 
 
 Each `LabX` folder contains the code, documentation, and any necessary files for that specific lab assignment.

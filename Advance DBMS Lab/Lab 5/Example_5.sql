@@ -138,12 +138,10 @@ GROUP BY lb.BranchName;
 
 
 --3
-SELECT lb.BranchName, SUM(bc.No_Of_Copies) AS Total_Copies
-FROM Book b
-JOIN Book_Copies bc ON b.BookId = bc.BookId
-JOIN Library_Branch lb ON bc.BranchId = lb.BranchId
-WHERE b.Title = 'DBMS'
-GROUP BY lb.BranchName;
+SELECT b.Name
+FROM Borrower b
+LEFT JOIN BOOK_LOAN bl ON b.CardNo = bl.CardNo
+WHERE bl.BookId IS NULL;
 
 
 --4
@@ -171,10 +169,9 @@ HAVING COUNT(bl.BookId) > 2;
 
 
 --7
-SELECT b.Title, SUM(bc.No_Of_Copies) AS Total_Copies
-FROM Book b
-JOIN Book_Author ba ON b.BookId = ba.BookId
+SELECT b.Title, bc.No_Of_Copies
+FROM Book_Author ba
+JOIN Book b ON ba.BookId = b.BookId
 JOIN Book_Copies bc ON b.BookId = bc.BookId
 JOIN Library_Branch lb ON bc.BranchId = lb.BranchId
-WHERE ba.AuthorName = 'Ivan BayRoss' AND lb.BranchName = 'RU Central Library'
-GROUP BY b.Title;
+WHERE ba.AuthorName = 'Ivan Bayross' AND lb.BranchName = 'RU Central Library';
